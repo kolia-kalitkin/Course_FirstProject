@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.urls import path, re_path
 from blog import views
- 
+
 urlpatterns = [
-    re_path(r'^about/contact/', views.contact),
-    re_path(r'^about/', views.about),
     path('', views.index),
+    path('about/', views.about, kwargs={"name": "Tom", "age": 38}),
+    re_path(r'^contact/', views.contact),
 ]
