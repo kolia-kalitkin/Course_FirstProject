@@ -1,4 +1,6 @@
 from django.shortcuts import render
- 
+
+
 def index(request):
-    return render(request, "index.html")
+    data = {"header": "Hello Django", "message": "Welcome to Python"}
+    return render(request, "blog/index.html", context=data)
